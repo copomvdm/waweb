@@ -1,6 +1,16 @@
 // Foca automaticamente no campo de telefone ao carregar a página
 window.onload = function() {
-    document.getElementById("phone").focus();
+    const phoneInput = document.getElementById("phone");
+    phoneInput.focus();
+
+    // Adiciona o evento de tecla pressionada no campo de telefone
+    phoneInput.addEventListener("keypress", function(event) {
+        // Verifica se a tecla pressionada é 'Enter'
+        if (event.key === "Enter") {
+            event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+            openWhatsAppWeb(); // Chama a função para abrir o WhatsApp Web
+        }
+    });
 };
 
 function formatPhone(input) {
