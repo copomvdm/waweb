@@ -1,3 +1,8 @@
+// Foca automaticamente no campo de telefone ao carregar a página
+window.onload = function() {
+    document.getElementById("phone").focus();
+};
+
 function formatPhone(input) {
     let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
     
